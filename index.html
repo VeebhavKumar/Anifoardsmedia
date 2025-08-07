@@ -418,39 +418,6 @@
 
 
 
-  <!-- Booking Pop-up -->
-  <div style="position: fixed; left: 20px; bottom: 100px; background: white; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 12px 16px; z-index: 999;">
-    <span style="color: #E91E63;">📍</span> Someone just booked SEO service from Delhi!
-  </div>
-</section>
-
-<!-- Booking Pop-up -->
-  <div style="position: fixed; left: 20px; bottom: 100px; background: white; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 12px 16px; z-index: 999;">
-    <span style="color: #E91E63;">📍</span> Someone just booked SEO service from Banglore!
-  </div>
-</section>
-
-<!-- Booking Pop-up -->
-  <div style="position: fixed; left: 20px; bottom: 100px; background: white; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 12px 16px; z-index: 999;">
-    <span style="color: #E91E63;">📍</span> Someone just booked SEO service from Noida!
-  </div>
-</section>
-
-<!-- Booking Pop-up -->
-  <div style="position: fixed; left: 20px; bottom: 100px; background: white; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 12px 16px; z-index: 999;">
-    <span style="color: #E91E63;">📍</span> Someone just booked SEO service from Gurugram!
-  </div>
-</section>
-
-<script>
-  const slider = document.getElementById("slider");
-  const afterImage = document.getElementById("afterImage");
-
-  slider.addEventListener("input", () => {
-    afterImage.style.clipPath = `inset(0 ${100 - slider.value}% 0 0)`;
-  });
-</script>
-
 
 
 
@@ -976,7 +943,7 @@
 
 <!-- Auto Slide Script -->
 <script>
-const slider = document.getElementById('testimonial-slider');
+const slide = document.getElementById('testimonial-slider');
 let scrollAmount = 0;
 const slideTimer = setInterval(() => {
   if (scrollAmount < slider.scrollWidth - slider.clientWidth) {
@@ -1116,7 +1083,15 @@ const slideTimer = setInterval(() => {
       <div class="case-card">
         <div class="card-inner">
           <div class="card-front">
-            <img src="https://source.unsplash.com/300x200/?fitness,gym" alt="Local Gym SEO">
+            <section class="case-studies">
+  <div class="container">
+    <h2 class="section-title">Client Case Studies</h2>
+    <div class="card-slider">
+      <!-- Case Study 1 -->
+      <div class="case-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="../Anifoardsmedia/assets/images/salesforce.jpeg" alt="Local Gym SEO">
             <h3>Local Gym SEO</h3>
             <p>+220% Website Visits</p>
             <span>3 Months</span>
@@ -1130,7 +1105,7 @@ const slideTimer = setInterval(() => {
       <div class="case-card">
         <div class="card-inner">
           <div class="card-front">
-            <img src="https://source.unsplash.com/300x200/?ecommerce,shop" alt="E‑Commerce Brand">
+            <img src="../Anifoardsmedia/assets/images/zapier.jpeg" alt="E-Commerce Brand">
             <h3>E-Commerce Brand</h3>
             <p>+150% Sales Growth</p>
             <span>6 Months</span>
@@ -1144,7 +1119,8 @@ const slideTimer = setInterval(() => {
       <div class="case-card">
         <div class="card-inner">
           <div class="card-front">
-           <img src="https://source.unsplash.com/300x200/?education,tech" alt="EduTech Company">
+           <img src="../Anifoardsmedia/assets/images/mailchimp.jpeg" alt="EduTech Company">
+
             <h3>EduTech Company</h3>
             <p>3× Lead Generation</p>
             <span>4 Months</span>
@@ -1242,18 +1218,7 @@ const slideTimer = setInterval(() => {
 </style>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
