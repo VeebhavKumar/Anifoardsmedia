@@ -95,14 +95,31 @@
 
 
 
-   <!-- SERVICES SECTION -->
+  <!-- SERVICES SECTION --> 
 <section class="section service" id="services" aria-label="service" style="background-color: #f4f4f400; padding: 60px 15px;">
+
+  <!-- Responsive style for mobile -->
+  <style>
+    @media (max-width: 600px) {
+      .content-box {
+        padding: 10px 14px !important;
+        width: fit-content !important;
+        border-radius: 6px !important;
+      }
+
+      .content-box .section-title {
+        font-size: 18px !important;
+        font-weight: 600 !important;
+      }
+    }
+  </style>
+
   <div class="container" style="margin: auto;">
 
     <!-- Content Box with gradient background -->
     <div class="content-box" style="
       background: linear-gradient(135deg, #0066FF, #8a2be2);
-      padding: 25px 18px;
+      padding: 20px 25px;
       border-radius: 10px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
       backdrop-filter: blur(5px);
@@ -110,6 +127,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      width: fit-content;
+      margin: 0 auto;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     "
     onmouseover="this.style.transform='scale(1.03)'; this.style.boxShadow='0 12px 25px rgba(0, 0, 0, 0.3)'"
@@ -124,6 +143,11 @@
         Our Services
       </h2>
     </div>
+
+  </div>
+</section>
+
+
 
     <!-- Service Grid List -->
     <ul class="grid-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
@@ -198,8 +222,7 @@
 
 
 
-
-    <!-- PROJECT SECTION -->
+<!-- PROJECT SECTION -->
 <section id="projects" style="
   position: relative;
   padding: 120px 20px;
@@ -207,6 +230,21 @@
   background-attachment: fixed;
   text-align: center;
 ">
+
+  <!-- Mobile Responsive Styling -->
+  <style>
+    @media (max-width: 600px) {
+      .project-highlight-box {
+        padding: 6px 10px !important;
+        border-radius: 5px !important;
+      }
+
+      .project-highlight-box h2 {
+        font-size: 16px !important;
+        font-weight: 500 !important;
+      }
+    }
+  </style>
 
   <!-- Optional overlay -->
   <div style="
@@ -217,11 +255,31 @@
     z-index: 1;">
   </div>
 
-  <!-- Title and content -->
-  <div style="position: relative; z-index: 2;">
-    <h2 class="project-title">
-      Our Recent Projects
-    </h2>
+  <!-- Highlighted Title Box -->
+  <div style="position: relative; z-index: 2; display: flex; justify-content: center; align-items: center;">
+    <div class="project-highlight-box" style="
+      background: linear-gradient(135deg, #0066FF, #8a2be2);
+      padding: 10px 16px;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      display: inline-block;
+      margin-bottom: 50px;
+    ">
+      <h2 class="project-title" style="
+        color: white;
+        margin: 0;
+        font-size: 20px;
+        font-weight: 500;">
+        Our Recent Projects
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+
 
     <ul class="grid-list">
       
