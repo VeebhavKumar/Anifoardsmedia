@@ -95,6 +95,119 @@
 
 
 
+
+<!-- Remix Icons & AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<!-- Why Choose Us Section -->
+<section class="why-choose-us" id="why-choose-us">
+  <style>
+    .why-choose-us {
+      background: #f5f5f5;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .why-choose-us .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #111;
+      font-weight: 700;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+    }
+
+    .feature-card {
+      background: #ffffff;
+      padding: 30px 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .feature-card .icon {
+      font-size: 3rem;
+      color: #ff5f8f;
+      margin-bottom: 15px;
+    }
+
+    .feature-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: #111;
+    }
+
+    .feature-card p {
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 480px) {
+      .why-choose-us .section-title {
+        font-size: 2rem;
+      }
+
+      .feature-card h3 {
+        font-size: 1.2rem;
+      }
+
+      .feature-card .icon {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Why Choose Us</h2>
+    <div class="features-grid">
+      <div class="feature-card" data-aos="zoom-in" data-aos-delay="100">
+        <i class="ri-customer-service-2-line icon"></i>
+        <h3>24/7 Support</h3>
+        <p>Always available for our clients via live chat and instant response systems.</p>
+      </div>
+      <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
+        <i class="ri-advertisement-line icon"></i>
+        <h3>Meta Ad Experts</h3>
+        <p>We scale your business using advanced ad strategies on Meta, Google & beyond.</p>
+      </div>
+      <div class="feature-card" data-aos="zoom-in" data-aos-delay="300">
+        <i class="ri-bar-chart-box-line icon"></i>
+        <h3>Client Growth</h3>
+        <p>We’ve driven 220%+ organic traffic growth for small & large businesses.</p>
+      </div>
+      <div class="feature-card" data-aos="zoom-in" data-aos-delay="400">
+        <i class="ri-speed-up-line icon"></i>
+        <h3>Performance Focus</h3>
+        <p>Everything we do is ROI-based. Your success = our success.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+
+
+
+
+
+
+
+
   <!-- SERVICES SECTION --> 
 <section class="section service" id="services" aria-label="service" style="background-color: #f4f4f400; padding: 60px 15px;">
 
@@ -217,6 +330,129 @@
 
   </div>
 </section>
+
+
+
+
+
+<section class="real-impact" style="padding: 60px 20px; background: #f9f9f9;">
+  <h2 style="text-align: center; font-size: 2rem; font-weight: bold; margin-bottom: 40px;">💡 Real-Time Impact</h2>
+
+  <div style="max-width: 700px; margin: auto;">
+    <h3 style="margin-bottom: 20px;">🚀 SEO Funnel Completion</h3>
+
+    <div class="progress-wrapper">
+      <p>Keyword Research</p>
+      <div class="progress-bar">
+        <div class="progress-fill" data-percentage="90" style="background-color: #4CAF50;">0%</div>
+      </div>
+    </div>
+
+    <div class="progress-wrapper">
+      <p>On-Page Optimization</p>
+      <div class="progress-bar">
+        <div class="progress-fill" data-percentage="75" style="background-color: #2196F3;">0%</div>
+      </div>
+    </div>
+
+    <div class="progress-wrapper">
+      <p>Link Building</p>
+      <div class="progress-bar">
+        <div class="progress-fill" data-percentage="50" style="background-color: #FF9800;">0%</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .progress-bar {
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 30px;
+    margin-bottom: 20px;
+  }
+
+  .progress-fill {
+    height: 100%;
+    width: 0%;
+    color: white;
+    text-align: right;
+    line-height: 30px;
+    padding-right: 10px;
+    border-radius: 4px;
+    transition: width 2s ease;
+    font-weight: bold;
+  }
+
+  @media (max-width: 600px) {
+    .progress-fill {
+      font-size: 14px;
+      padding-right: 6px;
+    }
+  }
+</style>
+
+<script>
+  // Animate progress bars when they come into view
+  document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const fill = entry.target;
+          const percent = fill.getAttribute('data-percentage');
+          fill.style.width = percent + '%';
+          fill.textContent = percent + '%';
+          observer.unobserve(fill); // only once
+        }
+      });
+    }, { threshold: 0.6 });
+
+    document.querySelectorAll('.progress-fill').forEach(el => {
+      observer.observe(el);
+    });
+  });
+</script>
+
+
+
+
+
+  <!-- Booking Pop-up -->
+  <div style="position: fixed; left: 20px; bottom: 100px; background: white; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 12px 16px; z-index: 999;">
+    <span style="color: #E91E63;">📍</span> Someone just booked SEO service from Delhi!
+  </div>
+</section>
+
+<!-- Booking Pop-up -->
+  <div style="position: fixed; left: 20px; bottom: 100px; background: white; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 12px 16px; z-index: 999;">
+    <span style="color: #E91E63;">📍</span> Someone just booked SEO service from Banglore!
+  </div>
+</section>
+
+<!-- Booking Pop-up -->
+  <div style="position: fixed; left: 20px; bottom: 100px; background: white; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 12px 16px; z-index: 999;">
+    <span style="color: #E91E63;">📍</span> Someone just booked SEO service from Noida!
+  </div>
+</section>
+
+<!-- Booking Pop-up -->
+  <div style="position: fixed; left: 20px; bottom: 100px; background: white; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 12px 16px; z-index: 999;">
+    <span style="color: #E91E63;">📍</span> Someone just booked SEO service from Gurugram!
+  </div>
+</section>
+
+<script>
+  const slider = document.getElementById("slider");
+  const afterImage = document.getElementById("afterImage");
+
+  slider.addEventListener("input", () => {
+    afterImage.style.clipPath = `inset(0 ${100 - slider.value}% 0 0)`;
+  });
+</script>
+
+
+
 
 
 
@@ -604,6 +840,423 @@
     </ul>
   </div>
 </section>
+
+
+
+
+
+
+<!-- Testimonial Section -->
+<section class="testimonial-section" style="background: #f9f9f9; padding: 40px 20px;">
+  <h2 style="text-align:center; font-size: 28px; margin-bottom: 30px;">What Our Clients Say</h2>
+  <div class="testimonial-slider" id="testimonial-slider">
+    <!-- Testimonial Items -->
+    <div class="testimonial-item">
+      <img src="https://i.pravatar.cc/100?img=1" alt="client" />
+      <p>"Anifoards Media helped us boost our local SEO in just months!"</p>
+      <div class="rating">★★★★★</div>
+      <span>- Rohan Singh</span>
+    </div>
+    <div class="testimonial-item">
+      <img src="https://i.pravatar.cc/100?img=2" alt="client" />
+      <p>"Nice work and creative team. Good support."</p>
+      <div class="rating">★★★★☆</div>
+      <span>- Priya Jaiswal</span>
+    </div>
+    <div class="testimonial-item">
+      <img src="https://i.pravatar.cc/100?img=3" alt="client" />
+      <p>"Decent service. Needs improvement in speed."</p>
+      <div class="rating">★★★½☆</div>
+      <span>- Mohit Verma</span>
+    </div>
+    <div class="testimonial-item">
+      <img src="https://i.pravatar.cc/100?img=4" alt="client" />
+      <p>"We achieved great results. Trustworthy company!"</p>
+      <div class="rating">★★★★★</div>
+      <span>- Sanya Kapoor</span>
+    </div>
+    <div class="testimonial-item">
+      <img src="https://i.pravatar.cc/100?img=5" alt="client" />
+      <p>"Their team is professional and responsive."</p>
+      <div class="rating">★★★★☆</div>
+      <span>- Ankit Shah</span>
+    </div>
+    <div class="testimonial-item">
+      <img src="https://i.pravatar.cc/100?img=6" alt="client" />
+      <p>"Content quality is nice but pricing is a bit high."</p>
+      <div class="rating">★★★½☆</div>
+      <span>- Reena Chauhan</span>
+    </div>
+    <div class="testimonial-item">
+      <img src="https://i.pravatar.cc/100?img=7" alt="client" />
+      <p>"Highly recommend for startups."</p>
+      <div class="rating">★★★★★</div>
+      <span>- Vikas Mishra</span>
+    </div>
+    <div class="testimonial-item">
+      <img src="https://i.pravatar.cc/100?img=8" alt="client" />
+      <p>"Good but timelines could improve."</p>
+      <div class="rating">★★★★☆</div>
+      <span>- Naina Yadav</span>
+    </div>
+    <div class="testimonial-item">
+      <img src="https://i.pravatar.cc/100?img=9" alt="client" />
+      <p>"A strong team with innovative ideas."</p>
+      <div class="rating">★★★★★</div>
+      <span>- Rajat Mehra</span>
+    </div>
+    <div class="testimonial-item">
+      <img src="https://i.pravatar.cc/100?img=10" alt="client" />
+      <p>"They took care of our digital strategy end-to-end."</p>
+      <div class="rating">★★★★★</div>
+      <span>- Kavita Singh</span>
+    </div>
+    <div class="testimonial-item">
+      <img src="https://i.pravatar.cc/100?img=11" alt="client" />
+      <p>"Amazing turnaround time. Really helpful."</p>
+      <div class="rating">★★★★☆</div>
+      <span>- Harshita Gupta</span>
+    </div>
+    <div class="testimonial-item">
+      <img src="https://i.pravatar.cc/100?img=12" alt="client" />
+      <p>"Fair experience overall. Can improve tech stack."</p>
+      <div class="rating">★★★½☆</div>
+      <span>- Karan Joshi</span>
+    </div>
+  </div>
+</section>
+
+<!-- Styles -->
+<style>
+.testimonial-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  scroll-behavior: smooth;
+}
+.testimonial-item {
+  flex: 0 0 80%;
+  max-width: 300px;
+  scroll-snap-align: center;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.testimonial-item img {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+.testimonial-item p {
+  font-size: 15px;
+  margin: 10px 0;
+  color: #555;
+}
+.testimonial-item .rating {
+  color: #f39c12;
+  font-size: 18px;
+}
+.testimonial-item span {
+  font-size: 14px;
+  color: #333;
+  display: block;
+  margin-top: 5px;
+}
+@media (max-width: 768px) {
+  .testimonial-item {
+    flex: 0 0 90%;
+  }
+}
+</style>
+
+<!-- Auto Slide Script -->
+<script>
+const slider = document.getElementById('testimonial-slider');
+let scrollAmount = 0;
+const slideTimer = setInterval(() => {
+  if (scrollAmount < slider.scrollWidth - slider.clientWidth) {
+    scrollAmount += 320;
+    slider.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+  } else {
+    scrollAmount = 0;
+    slider.scrollTo({ left: 0, behavior: 'smooth' });
+  }
+}, 4000);
+</script>
+
+
+
+
+
+
+<section class="stats-section" style="text-align:center; padding:40px 20px; background:#000; color:white;">
+  <h2>Our Impact in Numbers</h2>
+  <div class="stats-container" style="display:flex; flex-wrap:wrap; justify-content:center; gap:40px; margin-top:20px;">
+    <div>
+      <h3 class="counter" data-target="250">0</h3>
+      <p>Projects Completed</p>
+    </div>
+    <div>
+      <h3 class="counter" data-target="125">0</h3>
+      <p>Happy Clients</p>
+    </div>
+    <div>
+      <h3 class="counter" data-target="5">0</h3>
+      <p>Years Experience</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  const counters = document.querySelectorAll('.counter');
+  counters.forEach(counter => {
+    counter.innerText = '0';
+    const updateCounter = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
+      const speed = 50;
+      const inc = target / speed;
+      if (count < target) {
+        counter.innerText = Math.ceil(count + inc);
+        setTimeout(updateCounter, 40);
+      } else {
+        counter.innerText = target;
+      }
+    };
+    updateCounter();
+  });
+</script>
+
+
+
+
+
+
+
+
+<section class="partner-logos">
+  <div class="logo-slider">
+    <div class="logo-track">
+      <a href="https://ads.google.com" target="_blank"><img src="/assets/images/googleads.jpeg" alt="Google Ads"></a>
+      <a href="https://www.meta.com/business/ads" target="_blank"><img src="/assets/images/meta.jpeg" alt="Meta Ads"></a>
+      <a href="https://www.canva.com" target="_blank"><img src="/assets/images/canva.jpeg" alt="Canva"></a>
+      <a href="https://www.hubspot.com" target="_blank"><img src="/assets/images/hubspot.jpeg" alt="HubSpot"></a>
+      <a href="https://www.salesforce.com" target="_blank"><img src="/assets/images/salesforce.jpeg" alt="Salesforce"></a>
+      <a href="https://www.linkedin.com/ads/" target="_blank"><img src="/assets/images/linkedin.jpeg" alt="LinkedIn Ads"></a>
+      <a href="https://www.shopify.com" target="_blank"><img src="/assets/images/shopify.jpeg" alt="Shopify"></a>
+      <a href="https://advertising.amazon.com" target="_blank"><img src="/assets/images/amazon.jpeg" alt="Amazon Ads"></a>
+      <a href="https://zapier.com" target="_blank"><img src="/assets/images/zapier.jpeg" alt="Zapier"></a>
+      <a href="https://www.semrush.com" target="_blank"><img src="/assets/images/semrush.jpeg" alt="SEMRush"></a>
+      <a href="https://mailchimp.com" target="_blank"><img src="/assets/images/mailchimp.jpeg" alt="Mailchimp"></a>
+      <a href="https://www.adobe.com" target="_blank"><img src="/assets/images/adobe.jpeg" alt="Adobe"></a>
+      <a href="https://www.youtube.com/ads" target="_blank"><img src="/assets/images/youtube.jpeg" alt="YouTube Ads"></a>
+      <a href="https://x.com" target="_blank"><img src="/assets/images/x.jpeg" alt="X (Twitter)"></a>
+    </div>
+  </div>
+</section>
+
+<style>
+.partner-logos {
+  background-color: #f9f9f9;
+  padding: 40px 0;
+  overflow: hidden;
+}
+.logo-slider {
+  width: 100%;
+  white-space: nowrap;
+  position: relative;
+}
+.logo-track {
+  display: inline-block;
+  animation: scroll 30s linear infinite;
+}
+.logo-track a {
+  display: inline-block;
+  margin: 0 30px;
+}
+.logo-track img {
+  height: 60px;
+  transition: transform 0.3s ease;
+}
+.logo-track img:hover {
+  transform: scale(1.1);
+}
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+@media (max-width: 768px) {
+  .logo-track img {
+    height: 40px;
+    margin: 0 20px;
+  }
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+<section class="case-studies">
+  <div class="container">
+    <h2 class="section-title">Client Case Studies</h2>
+    <div class="card-slider">
+      <!-- Case Study 1 -->
+      <div class="case-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="https://source.unsplash.com/300x200/?fitness,gym" alt="Local Gym SEO">
+            <h3>Local Gym SEO</h3>
+            <p>+220% Website Visits</p>
+            <span>3 Months</span>
+          </div>
+          <div class="card-back">
+            <p>We helped a local gym increase traffic with targeted SEO strategies, boosting local search visibility.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Case Study 2 -->
+      <div class="case-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="https://source.unsplash.com/300x200/?ecommerce,shop" alt="E‑Commerce Brand">
+            <h3>E-Commerce Brand</h3>
+            <p>+150% Sales Growth</p>
+            <span>6 Months</span>
+          </div>
+          <div class="card-back">
+            <p>Ad optimization & performance marketing drove major growth for this startup brand.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Case Study 3 -->
+      <div class="case-card">
+        <div class="card-inner">
+          <div class="card-front">
+           <img src="https://source.unsplash.com/300x200/?education,tech" alt="EduTech Company">
+            <h3>EduTech Company</h3>
+            <p>3× Lead Generation</p>
+            <span>4 Months</span>
+          </div>
+          <div class="card-back">
+            <p>We scaled lead-gen campaigns using Meta Ads & funnel optimization for an edtech firm.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.case-studies {
+  background: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+.card-slider {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.case-card {
+  width: 280px;
+  height: 340px;
+  perspective: 1000px;
+}
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+.case-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-front {
+  background: #f5f5f5;
+  padding: 10px;
+}
+.card-front img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.card-front h3 {
+  font-size: 1.1rem;
+  margin: 10px 0 5px;
+}
+.card-front p {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.card-front span {
+  font-size: 0.85rem;
+  color: #666;
+}
+.card-back {
+  background: #111;
+  color: #fff;
+  padding: 20px;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+@media (max-width: 768px) {
+  .card-slider {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
